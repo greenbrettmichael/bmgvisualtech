@@ -1,0 +1,6 @@
+__pycache__
+.fips-*
+fips-files/build/
+fips-files/deploy/
+CMakeUserPresets.json
+*.pyc

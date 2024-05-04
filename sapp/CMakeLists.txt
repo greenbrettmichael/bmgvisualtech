@@ -1,0 +1,16 @@
+# select the 3D backend for sokol_gfx.h and sokol_app.h
+add_definitions(-D${sokol_backend})
+
+fips_ide_group(Samples)
+fips_begin_app(sdf-sapp windowed)
+    fips_files(sdf-sapp.c)
+    sokol_shader(sdf-sapp.glsl ${slang})
+    fips_deps(sokol)
+fips_end_app()
+fips_ide_group(SamplesWithDebugUI)
+fips_begin_app(sdf-sapp-ui windowed)
+    fips_files(sdf-sapp.c)
+    sokol_shader(sdf-sapp.glsl ${slang})
+    fips_deps(sokol dbgui)
+    target_compile_definitions(sdf-sapp-ui PRIVATE USE_DBG_UI)
+fips_end_app()
